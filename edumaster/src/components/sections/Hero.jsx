@@ -104,7 +104,7 @@ export default function Hero() {
             src="/hero-students.png"
             alt="EDU MASTER students celebrating their academic success"
             className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 40%' }}
+            style={{ objectPosition: '30% center' }}
           />
         </motion.div>
 
