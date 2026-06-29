@@ -88,7 +88,7 @@ export default function Hero() {
   }, [mouseX, mouseY])
 
   return (
-    <section id="hero" ref={sectionRef} className="relative h-screen overflow-hidden">
+    <section id="hero" ref={sectionRef} className="relative min-h-[100dvh] overflow-hidden">
       <motion.div
         className="absolute inset-0"
         style={{ scale: imageScale }}
@@ -109,7 +109,7 @@ export default function Hero() {
         </motion.div>
 
         <div className="absolute inset-0 z-10"
-          style={{ background: 'linear-gradient(90deg, rgba(8,18,45,0.92) 0%, rgba(8,18,45,0.75) 35%, rgba(8,18,45,0.45) 65%, rgba(8,18,45,0.20) 100%)' }}
+          style={{ background: 'linear-gradient(90deg, rgba(8,18,45,0.95) 0%, rgba(8,18,45,0.8) 40%, rgba(8,18,45,0.5) 70%, rgba(8,18,45,0.3) 100%)' }}
         />
         <div className="absolute inset-0 z-10"
           style={{ background: 'linear-gradient(180deg, rgba(8,11,20,0.3) 0%, transparent 25%, transparent 75%, rgba(8,11,20,0.5) 100%)' }}
@@ -120,7 +120,7 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
-        className="relative z-30 h-full flex items-center pt-20 lg:pt-24"
+        className="relative z-30 min-h-[100dvh] flex items-center pt-20 pb-24 lg:pt-24"
         style={{ opacity: contentOpacity }}
       >
         <div className="section-padding w-full max-w-7xl mx-auto">
@@ -139,7 +139,7 @@ export default function Hero() {
 
               <motion.h1
                 variants={itemVariants}
-                className="text-[2.75rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] xl:text-[5.5rem] font-display font-extrabold leading-[1.05] mb-5 md:mb-6 text-white"
+                className="text-[2.25rem] sm:text-[3rem] md:text-[4.5rem] lg:text-[5rem] xl:text-[5.5rem] font-display font-extrabold leading-[1.05] mb-4 md:mb-6 text-white"
               >
                 {content.title1}
                 <br />
