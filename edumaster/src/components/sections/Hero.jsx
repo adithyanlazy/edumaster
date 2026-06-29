@@ -109,10 +109,10 @@ export default function Hero() {
         </motion.div>
 
         <div className="absolute inset-0 z-10"
-          style={{ background: 'linear-gradient(90deg, rgba(8,18,45,0.95) 0%, rgba(8,18,45,0.8) 40%, rgba(8,18,45,0.5) 70%, rgba(8,18,45,0.3) 100%)' }}
+          style={{ background: 'linear-gradient(90deg, rgba(8,18,45,0.85) 0%, rgba(8,18,45,0.5) 35%, rgba(8,18,45,0.15) 65%, rgba(8,18,45,0.05) 100%)' }}
         />
         <div className="absolute inset-0 z-10"
-          style={{ background: 'linear-gradient(180deg, rgba(8,11,20,0.3) 0%, transparent 25%, transparent 75%, rgba(8,11,20,0.5) 100%)' }}
+          style={{ background: 'linear-gradient(180deg, rgba(8,11,20,0.25) 0%, transparent 20%, transparent 80%, rgba(8,11,20,0.4) 100%)' }}
         />
         <div className="absolute inset-0 z-10 bg-blue-900/10" />
 
@@ -131,7 +131,7 @@ export default function Hero() {
               animate="visible"
             >
               <motion.div variants={itemVariants}>
-                <div className="inline-flex items-center gap-2.5 bg-white/[0.08] backdrop-blur-sm border border-white/[0.1] rounded-full px-5 py-2.5 mb-6 md:mb-8">
+                <div className="inline-flex items-center gap-2.5 bg-black/30 backdrop-blur-md border border-white/[0.15] rounded-full px-5 py-2.5 mb-6 md:mb-8">
                   <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
                   <span className="text-sm font-medium text-white/80">{content.badge}</span>
                 </div>
@@ -140,6 +140,7 @@ export default function Hero() {
               <motion.h1
                 variants={itemVariants}
                 className="text-[2.25rem] sm:text-[3rem] md:text-[4.5rem] lg:text-[5rem] xl:text-[5.5rem] font-display font-extrabold leading-[1.05] mb-4 md:mb-6 text-white"
+                style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
               >
                 {content.title1}
                 <br />
@@ -162,7 +163,8 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20, filter: 'blur(5px)' }}
                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 transition={{ type: 'spring', stiffness: 100, damping: 14, delay: 0.75 }}
-                className="text-base md:text-lg text-white/50 max-w-[480px] mb-8 md:mb-10 leading-relaxed"
+                className="text-base md:text-lg text-white/60 max-w-[480px] mb-8 md:mb-10 leading-relaxed"
+                style={{ textShadow: '0 1px 10px rgba(0,0,0,0.4)' }}
               >
                 {content.subtitle}
               </motion.p>
