@@ -7,13 +7,13 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'admin.html'),
+        main: resolve(__dirname, 'index.html'),
       },
     },
   },
   server: {
     port: 3001,
-    open: '/admin.html',
+    open: true,
     proxy: {
       '/api': {
         target: 'http://localhost:5000',
