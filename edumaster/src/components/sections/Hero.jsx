@@ -88,7 +88,7 @@ export default function Hero() {
   }, [mouseX, mouseY])
 
   return (
-    <section id="hero" ref={sectionRef} className="relative min-h-[85vh] sm:min-h-[100dvh] overflow-hidden">
+    <section id="hero" ref={sectionRef} className="relative min-h-[100dvh] overflow-hidden">
       <motion.div
         className="absolute inset-0"
         style={{ scale: imageScale }}
@@ -103,15 +103,12 @@ export default function Hero() {
           <img
             src="/hero-students.png"
             alt="EDU MASTER students celebrating their academic success"
-            className="w-full h-full object-cover sm:object-[center_30%]"
-            style={{ objectPosition: 'center center' }}
+            className="w-full h-full object-cover"
+            style={{ objectPosition: '30% center' }}
           />
         </motion.div>
 
-        <div className="absolute inset-0 z-10 sm:hidden"
-          style={{ background: 'linear-gradient(180deg, rgba(8,18,45,0.7) 0%, rgba(8,18,45,0.4) 40%, rgba(8,18,45,0.5) 100%)' }}
-        />
-        <div className="absolute inset-0 z-10 hidden sm:block"
+        <div className="absolute inset-0 z-10"
           style={{ background: 'linear-gradient(90deg, rgba(8,18,45,0.85) 0%, rgba(8,18,45,0.5) 35%, rgba(8,18,45,0.15) 65%, rgba(8,18,45,0.05) 100%)' }}
         />
         <div className="absolute inset-0 z-10"
@@ -123,7 +120,7 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
-        className="relative z-30 min-h-[85vh] sm:min-h-[100dvh] flex items-end sm:items-center pb-16 sm:pb-0 sm:pt-20 lg:pt-24"
+        className="relative z-30 min-h-[100dvh] flex items-center pt-16 sm:pt-20 pb-24 lg:pt-24"
         style={{ opacity: contentOpacity }}
       >
         <div className="section-padding w-full max-w-7xl mx-auto">
