@@ -88,44 +88,56 @@ export default function Hero() {
   }, [mouseX, mouseY])
 
   return (
-    <section id="hero" ref={sectionRef} className="relative min-h-[85vh] sm:min-h-[100dvh] overflow-hidden">
-      <motion.div
-        className="absolute inset-0"
-        style={{ scale: imageScale }}
-      >
+    <section id="hero" ref={sectionRef} className="relative overflow-hidden">
+      <div className="sm:hidden relative w-full h-[50vh] overflow-hidden">
+        <img
+          src="/hero-students.png"
+          alt="EDU MASTER students celebrating their academic success"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: 'center 40%' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a] via-[#0a0e1a]/40 to-transparent" />
+      </div>
+
+      <div className="relative sm:absolute sm:inset-0">
+        <div className="hidden sm:block absolute inset-0">
+          <motion.div
+            className="absolute inset-0"
+            style={{ scale: imageScale }}
+          >
+            <motion.div
+              className="absolute inset-0"
+              style={{
+                x: useTransform(springX, (v) => v * 6),
+                y: useTransform(springY, (v) => v * 4),
+              }}
+            >
+              <img
+                src="/hero-students.png"
+                alt="EDU MASTER students celebrating their academic success"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: 'center 30%' }}
+              />
+            </motion.div>
+            <div className="absolute inset-0 z-10"
+              style={{ background: 'linear-gradient(90deg, rgba(8,18,45,0.85) 0%, rgba(8,18,45,0.5) 35%, rgba(8,18,45,0.15) 65%, rgba(8,18,45,0.05) 100%)' }}
+            />
+            <div className="absolute inset-0 z-10"
+              style={{ background: 'linear-gradient(180deg, rgba(8,11,20,0.25) 0%, transparent 20%, transparent 80%, rgba(8,11,20,0.4) 100%)' }}
+            />
+            <div className="absolute inset-0 z-10 bg-blue-900/10" />
+            <Particles />
+          </motion.div>
+        </div>
+
+        <div className="sm:hidden bg-[#0a0e1a]">
+          <Particles />
+        </div>
+
         <motion.div
-          className="absolute inset-0"
-          style={{
-            x: useTransform(springX, (v) => v * 6),
-            y: useTransform(springY, (v) => v * 4),
-          }}
+          className="relative z-30 min-h-[50vh] sm:min-h-[100dvh] flex items-center sm:pt-24 lg:pt-24 py-12 sm:py-0"
+          style={{ opacity: contentOpacity }}
         >
-          <img
-            src="/hero-students.png"
-            alt="EDU MASTER students celebrating their academic success"
-            className="w-full h-full object-cover sm:object-[center_30%]"
-            style={{ objectPosition: 'center center' }}
-          />
-        </motion.div>
-
-        <div className="absolute inset-0 z-10 sm:hidden"
-          style={{ background: 'linear-gradient(180deg, rgba(8,18,45,0.7) 0%, rgba(8,18,45,0.4) 40%, rgba(8,18,45,0.5) 100%)' }}
-        />
-        <div className="absolute inset-0 z-10 hidden sm:block"
-          style={{ background: 'linear-gradient(90deg, rgba(8,18,45,0.85) 0%, rgba(8,18,45,0.5) 35%, rgba(8,18,45,0.15) 65%, rgba(8,18,45,0.05) 100%)' }}
-        />
-        <div className="absolute inset-0 z-10"
-          style={{ background: 'linear-gradient(180deg, rgba(8,11,20,0.25) 0%, transparent 20%, transparent 80%, rgba(8,11,20,0.4) 100%)' }}
-        />
-        <div className="absolute inset-0 z-10 bg-blue-900/10" />
-
-        <Particles />
-      </motion.div>
-
-      <motion.div
-        className="relative z-30 min-h-[85vh] sm:min-h-[100dvh] flex items-end sm:items-center pb-16 sm:pb-0 sm:pt-20 lg:pt-24"
-        style={{ opacity: contentOpacity }}
-      >
         <div className="section-padding w-full max-w-7xl mx-auto">
           <div className="max-w-[600px]">
             <motion.div
@@ -142,7 +154,7 @@ export default function Hero() {
 
               <motion.h1
                 variants={itemVariants}
-                className="text-[2.25rem] sm:text-[3rem] md:text-[4.5rem] lg:text-[5rem] xl:text-[5.5rem] font-display font-extrabold leading-[1.05] mb-4 md:mb-6 text-white"
+                className="text-[2rem] sm:text-[3rem] md:text-[4.5rem] lg:text-[5rem] xl:text-[5.5rem] font-display font-extrabold leading-[1.05] mb-4 md:mb-6 text-white"
                 style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
               >
                 {content.title1}
@@ -219,9 +231,12 @@ export default function Hero() {
             </motion.div>
           </div>
         </div>
-      </motion.div>
+        </motion.div>
+      </div>
 
-      <ScrollIndicator />
+      <div className="hidden sm:block">
+        <ScrollIndicator />
+      </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-surface-50 dark:from-[#0f1117] to-transparent z-20 transition-colors duration-500" />
     </section>
