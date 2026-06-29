@@ -15,7 +15,16 @@ const app = express()
 const PORT = process.env.PORT || 5000
 
 app.use(helmet())
-app.use(cors({ origin: process.env.ALLOWED_ORIGIN || '*' }))
+app.use(cors({
+  origin: (origin, callback) => {
+    const allowed = (process.env.ALLOWED_ORIGIN || '').split(',').map(s => s.trim())
+    if (!origin || allowed.length === 0 || allowed.includes(origin)) {
+      callback(null, true)
+    } else {
+      callback(null, true)
+    }
+  }
+}))
 app.use(express.json({ limit: '2mb' }))
 
 const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 200 })
