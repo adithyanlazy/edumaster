@@ -103,8 +103,7 @@ export default function Hero() {
           <img
             src="/hero-students.png"
             alt="EDU MASTER students celebrating their academic success"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 30%' }}
+            className="w-full h-full object-cover object-center sm:object-[center_30%]"
           />
         </motion.div>
 
@@ -120,7 +119,7 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
-        className="relative z-30 min-h-[100dvh] flex items-center pt-20 pb-24 lg:pt-24"
+        className="relative z-30 min-h-[100dvh] flex items-center pt-16 sm:pt-20 pb-24 lg:pt-24"
         style={{ opacity: contentOpacity }}
       >
         <div className="section-padding w-full max-w-7xl mx-auto">
